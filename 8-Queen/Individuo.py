@@ -22,8 +22,3 @@ class Individuo:
 
     def __repr__(self) -> str:
         return f'chromossome:\n{self.chromosome}'
-
-
-if  __name__ == '__main__':
-    i1 = Individuo()
-    print(i1)
