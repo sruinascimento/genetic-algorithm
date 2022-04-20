@@ -4,6 +4,7 @@ class Individuo:
 
     def __init__(self, chromosome = False ) -> None:
         self.chromosome = self.generate_chromosome() if not chromosome else chromosome
+        self.fitness = 0
 
     def generate_chromosome(self) -> list:
         ''' Generate matriz 8X8 with 8 Queens, [1] - Queen '''
@@ -19,6 +20,11 @@ class Individuo:
             random_chromosome[coordinate[0]][coordinate[1]] = 1
 
         return random_chromosome
+
+    def copy(self):
+        temporary_individuo = Individuo(self.chromosome)
+        temporary_individuo.fitness = self.fitness
+        return temporary_individuo
 
     def __repr__(self) -> str:
         return f'chromossome:\n{self.chromosome}'
